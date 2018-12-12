@@ -69,11 +69,9 @@ const displayChangeLog = (log, fileName) => {
 	let newLog = log.reverse();
 	console.log('*****Change Log*****\n');
 	console.log(newLog);
-	console.log('\nNew reconciled json has been written to current directory with filename:', 'RECONCILED_' + fileName);
-	fs.writeFile('changelog.txt', JSON.stringify(newLog), 'utf8', () => console.log('\nChange log also written to current directory with filename: changelog.txt'));
-	//console.log('\nChange log also written to current directory with filename: changelog.txt');
+	console.log('\nNew reconciled json has been written to current directory with filename:', '"RECONCILED_' + fileName + '"');
+	fs.writeFile('changelog.txt', JSON.stringify(newLog), 'utf8', () => console.log('\nChange log also written to current directory with filename: "changelog.txt"'));
 }
-//console.log(deduplicate(records.leads).reverse());
 
 //Check if user entered in less than 3 arguments in command line
 if (process.argv.length < 3) {
